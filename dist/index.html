@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
+
+        <title>Dashboard</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row --isSpaceBetween">
+                <p class="col-2 title">DASHBOARD</p>
+                <input placeholder="Search" class="col-2" id="search-input"/>
+                <img src="../images/user-icon.png" class="col-1 icons">
+            </div>
+            <div class="column">
+                <div class="row col-12">
+                    <!-- Column 1 : Menu-->
+                    <div class="col-2 bg-template bg-template--fixed">
+                        <ul>
+                            <li>
+                                <a href="#">DASHBOARD</a>
+                            </li>
+                            <li>
+                                <a href="#">PAGES</a>
+                            </li>
+                            <li>
+                                <a href="#">EVENEMENTS</a>
+                            </li>
+                            <li>
+                                <a href="#">PLANNING</a>
+                            </li>
+                            <li>
+                                <a href="#">DOCUMENTS</a>
+                            </li>
+                            <li>
+                                <a href="#">NOTES</a>
+                            </li>
+                            <li>
+                                <a href="#">WIDGETS</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Column 2 : Content-->
+                    <div class="col-10 margin-left-auto">
+                        <!-- Model Big -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card card--isBig">
+                                    <div class="card-text">
+                                        Connexions sur les 7 derniers jours
+                                    </div>
+                                    <div class="canvas">
+                                        <canvas id="graph-login-over-last-week"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Model small x4-->
+                        <div class="row --isSpaceBetween">
+                            <div class="col-2">
+                                <div class="card card--isSmall">
+                                    <div class="row">
+                                        <img src="../images/user-icon.png" class="col-1 icons">
+                                        <p class="paddingless marginless">Utilisateurs</p>
+                                    </div>
+                                    <p class="card-text card-text--with-bottom-line marginless">130</p>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="card card--isSmall">
+                                    <div class="row">
+                                        <img src="../images/document-icon.png" class="col-1 icons">
+                                        <p class="paddingless marginless">Documents</p>
+                                    </div>
+                                    <p class="card-text card-text--with-bottom-line marginless">287</p>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="card card--isSmall">
+                                    <div class="row">
+                                        <img src="../images/event-icon.png" class="col-1 icons">
+                                        <p class="paddingless marginless">Evenements</p>
+                                    </div>
+                                    <p class="card-text card-text--with-bottom-line marginless">41</p>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="card card--isSmall">
+                                    <div class="row">
+                                        <img src="../images/group-icon.png" class="col-1 icons">
+                                        <p class="paddingless marginless">Classes</p>
+                                    </div>
+                                    <p class="card-text card-text--with-bottom-line marginless">17</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Model medium x3-->
+                        <div class="row --isSpaceBetween">
+                            <div class="col-3">
+                                <div class="card card--isMedium">
+                                    <div class="card-text card-text--small">
+                                        Inscriptions sur les 12 derniers mois
+                                    </div>
+                                    <div class="canvas">
+                                        <canvas id="graph-register-over-last-year"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="card card--isMedium">
+                                    <div class="card-text card-text--small">
+                                        Documents upload sur les 30 derniers jours
+                                    </div>
+                                    <div class="canvas">
+                                        <canvas id="graph-document-upload-over-last-month"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="card card--isMedium">
+                                    <div class="card-text card-text--small">
+                                        Evènements sur les 7 derniers jours
+                                    </div>
+                                    <div class="canvas">
+                                        <canvas id="graph-event-over-last-week"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="bundle.js"></script>
+        <script src="../src/js/graph-login.js"></script>
+        <script src="../src/js/graph-register.js"></script>
+        <script src="../src/js/graph-document.js"></script>
+        <script src="../src/js/graph-event.js"></script>
+    </body>
+</html>

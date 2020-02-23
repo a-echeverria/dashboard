@@ -1,0 +1,184 @@
+*{
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $body_font;
+  color: $text-color;
+  background-color: $body-color1;
+  background-image: linear-gradient(45deg,$body-color2,$body-color1);
+  margin: 0;
+  height: 100vh;
+}
+
+h1, h2 {
+  font-family: $title_font;
+}
+
+h1 {
+  font-size: rem(24);
+}
+
+h2 {
+  font-size: rem(16);
+}
+
+p {
+  line-height: 1.5rem;
+}
+
+ul {
+  list-style: none; /* Remove default bullets */
+}
+
+a {
+  color: $white;
+  text-decoration: none;
+}
+
+a:visited {
+  color: $white;
+}
+
+ul li a {
+  color: $white;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin: 20px 0 20px -1rem;
+}
+
+ul li a:hover {
+  transition: padding-left;
+  transition-duration: 0.5s;
+  padding-left: 10px;
+}
+
+.container {
+  max-width: $container-width;
+  overflow-x: hidden;
+  margin: auto;
+}
+
+.row {
+  padding: 10px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.column {
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.col-inner {
+  padding: 15px;
+}
+
+.title {
+  text-align: center;
+  font-size: rem(24);
+}
+
+#search-input {
+  margin: auto 0 auto auto;
+  border: hidden;
+  border-radius: 15px;
+  height: 24px;
+  padding: 15px;
+  justify-content: flex-end;
+  font-size: rem(18);
+}
+
+.icons {
+  min-width: 50px;
+  max-width: 50px;
+  margin: auto 1rem;
+  border-radius: 50%;
+}
+
+.bg-template {
+  height: 100vh;
+  border-top-right-radius: 15px;
+  background-image: linear-gradient(45deg, $bg-color-template2, $bg-color-template1);
+}
+
+.bg-template--fixed {
+  position: fixed;
+}
+
+.bg-template p {
+  color: $text-color-template;
+}
+
+.margin-auto {
+  margin: auto;
+}
+
+.margin-left-auto {
+  margin-left: auto;
+}
+
+.paddingless {
+  padding: 0;
+}
+
+.marginless {
+  margin: 0;
+}
+
+.--isSpaceBetween {
+  justify-content: space-between;
+}
+
+.canvas {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+$columns: 12;
+
+@for $i from 1 through $columns {
+
+  .col-sm#{$i} {
+    flex-basis: (100 / ($columns / $i)) * 1%;
+    width: (100 / ($columns / $i)) * 1%;
+    padding: 0 $goutiere;
+  }
+
+  .col-sm-offset-#{$i} {
+    margin-left: (100 / ($columns / $i)) * 1%;
+  }
+
+  .col-md-#{$i} {
+    flex-basis: 100%;
+    width: 100%;
+    padding: 0 $goutiere;
+  }
+}
+
+@media screen and (min-width: $mobile-minw) {
+  @for $i from 1 through $columns {
+
+    .col-#{$i} {
+      flex-basis: (100 / ($columns / $i)) * 1%;
+      width: (100 / ($columns / $i)) * 1%;;
+      padding: 0 $goutiere;
+    }
+
+    .col-md-#{$i} {
+      flex-basis: (100 / ($columns / $i)) * 1%;
+      width: (100 / ($columns / $i)) * 1%;
+      padding: 0 $goutiere;
+    }
+  }
+}
